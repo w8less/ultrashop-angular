@@ -1,0 +1,16 @@
+nav {
+    a {
+        color: #BFBFBF;
+        display: inline-block;
+        font-weight: 400;
+        text-decoration: none;
+        text-align: center;
+        margin: 0 !important;
+
+        &.active {
+            border-bottom: 3px solid #424154;
+            color: #424154;
+            text-decoration: none;
+        }
+    }
+}

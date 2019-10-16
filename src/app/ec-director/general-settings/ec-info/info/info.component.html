@@ -1,0 +1,67 @@
+<form [formGroup]="infoForm" (ngSubmit)="submitInfo()">
+  <div class="block-wrapper global" [ngSwitch]="trans.language">
+    <div class="block">
+      <div class="title">Выберите язык</div> 
+      <div class="radio-btns">
+        <label *ngFor="let lang of trans.languages"><input type="radio" [checked]="trans.language === lang" name="lang" [value]="lang" (change)="trans.changeLanguage($event)"><span [innerText]="lang.toUpperCase()"></span></label>
+      </div>
+    </div>
+    <div class="block-wrapper" *ngSwitchDefault>
+      <div class="block">
+          <div class="title">Название магазина</div>        
+          <div class="form-wrap">
+            <input type="text"  formControlName="title_ru" placeholder="Название" class="form-input">
+            <label>Название</label>
+          </div>
+      </div>
+      <div class="block">
+          <div class="title">Описание магазина</div>        
+          <ckeditor [editor]="Editor" (change)="onChangeRu($event)"  [ngModelOptions]="{standalone: true}" [(ngModel)]="model_ru.editorData"></ckeditor>
+      </div>
+    </div>
+    <div class="block-wrapper" *ngSwitchCase="'en'">
+      <div class="block">
+          <div class="title">Название магазина</div> 
+          <div class="form-wrap">
+            <input type="text"  formControlName="title_en" placeholder="Название" class="form-input">
+            <label>Название</label>
+          </div>
+      </div>
+      <div class="block">
+          <div class="title">Описание магазина</div>        
+          <ckeditor [editor]="Editor" (change)="onChangeEn($event)"  [ngModelOptions]="{standalone: true}" [(ngModel)]="model_en.editorData"></ckeditor>
+      </div>
+    </div>
+    <div class="block-wrapper" *ngSwitchCase="'ua'">
+      <div class="block">
+          <div class="title">Название магазина</div> 
+          <div class="form-wrap">
+            <input type="text" formControlName="title_ua" placeholder="Название" class="form-input">
+            <label>Название</label>
+          </div>
+      </div>
+      <div class="block">
+          <div class="title">Описание магазина</div>        
+          <ckeditor [editor]="Editor" (change)="onChangeUa($event)"  [ngModelOptions]="{standalone: true}" [(ngModel)]="model_ua.editorData"></ckeditor>
+      </div>
+    </div>
+    <div class="block-wrapper">
+      <div class="block">
+          <div class="title">Номер телефона</div>        
+          <div class="form-wrap">
+            <input type="tel"  formControlName="tel" pattern="[\+]\d{2}\s[\(]\d{3}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}"
+            minlength="13"
+            maxlength="13" placeholder="Номер телефона" class="form-input">
+            <label>Номер телефона</label>
+          </div>
+      </div>  
+    </div>
+    <div class="block-wrapper">
+    <div class="block">
+      <div class="btn-wrp">
+        <button type="submit" class="btn-publish-update">Добавить</button>
+      </div>
+    </div>
+    </div>
+  </div> 
+</form>

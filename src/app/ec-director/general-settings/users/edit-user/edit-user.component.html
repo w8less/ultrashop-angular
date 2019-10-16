@@ -1,0 +1,66 @@
+<form *ngIf="addUserForm" [formGroup]="addUserForm" (ngSubmit)="submit()">
+  <div class="block-wrapper">
+    <div class="block">
+        <div class="title with-back"><div class="back-link" (click)="general.locationBack()"></div>Редактировать пользователя</div>
+        <div class="form-wrap">
+          <input type="text" formControlName="first_name" placeholder="Имя" class="form-input">
+          <label>Имя</label>
+        </div>
+        <div class="form-wrap">
+          <input type="text" formControlName="last_name" placeholder="Фамилия" class="form-input">
+          <label>Фамилия</label>
+        </div>
+        <div class="form-wrap">
+          <input type="password" formControlName="old_password" placeholder="Старый пароль" class="form-input">
+          <label>Старый пароль</label>
+        </div>
+        <div class="form-wrap">
+          <input type="password" formControlName="new_password" placeholder="Новый пароль" class="form-input">
+          <label>Новый пароль</label>
+        </div>
+        <div class="form-wrap">
+          <input type="password" formControlName="new_password_confirm" placeholder="Подтверждение нового пароля" class="form-input">
+          <label>Подтверждение нового пароля</label>
+        </div>
+        <div class="form-wrap">
+          <input type="tel" formControlName="tel" placeholder="Номер телефона" class="form-input">
+          <label>Номер телефона</label>
+        </div>
+        <div class="form-wrap">
+          <input type="email" formControlName="email" placeholder="Почта" class="form-input">
+          <label>Почта</label>
+        </div>
+        <mat-form-field>
+          <mat-label>Выберите должность сотрудника</mat-label>
+          <mat-select formControlName="groups_ids" multiple msInfiniteScroll (infiniteScroll)="onMatSelectInfititeScroll()">
+            <mat-option *ngFor="let group of groups?.results" [value]="group.id">{{group.name}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="check-material">
+          <div class="checkbox-apple">
+              <input type="checkbox" id="is_active" formControlName="is_active" class="apple-switch">
+              <label for="is_active">Статус</label>     
+          </div>
+        </div>
+        <div class="check-material">
+          <div class="checkbox-apple">
+              <input type="checkbox" id="is_staff" formControlName="is_staff" class="apple-switch">
+              <label for="is_staff">Персонал</label>     
+          </div>
+        </div>
+        <div class="block">
+          <div class="title">Фото</div>
+          <div><img [src]="user?.image" [alt]="user.first_name"></div>
+          <div class="form-wrap">
+              <input type="file" formControlName="image">
+          </div>
+        </div>
+    </div>
+
+    <div class="block">
+      <div class="btn-wrp">
+        <button type="submit" class="btn-publish-update">Обновить</button>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,40 @@
+<div class="block-wrapper global">
+    <div class="block">
+      <div class="title">Выберите язык</div> 
+      <div class="radio-btns">
+          <label *ngFor="let lang of trans.languages"><input type="radio" [checked]="trans.language === lang" name="lang" [value]="lang" (change)="trans.changeLanguage($event)"><span [innerText]="lang.toUpperCase()"></span></label>
+      </div>
+    </div>
+  
+    <div class="block-wrapper">
+      <form [formGroup]="notificationForm" (ngSubmit)="onSubmit()">
+          <div class="block-wrapper global">
+            <div class="block-wrapper">
+              <div class="block" [ngSwitch]="trans.language">
+                  <div class="title">EMAIL Оповещение</div>
+                  <ng-container *ngFor="let lang of trans.languages">
+                      <div class="form-wrap" *ngSwitchCase="lang">
+                        <input type="text" formControlName="email_title_{{lang}}" placeholder="Заголовок сообщения" class="form-input">
+                        <label>Заголовок сообщения</label>
+                      </div>
+                    <ckeditor *ngSwitchCase="lang" [editor]="editor" formControlName="email_content_{{lang}}"></ckeditor>
+                  </ng-container>
+              </div>
+              <div class="block" [ngSwitch]="trans.language">
+                  <div class="title">SMS Уведомление</div>        
+                  <ng-container *ngFor="let lang of trans.languages">
+                    <ckeditor *ngSwitchCase="lang" [editor]="editor" formControlName="sms_content_{{lang}}"></ckeditor>
+                  </ng-container>
+              </div>
+            </div>
+            <div class="block-wrapper">
+              <div class="block">
+                <div class="btn-wrp">
+                  <button type="submit" class="btn-publish-update">Сохранить</button>
+                </div>
+              </div>
+            </div>
+          </div> 
+        </form>
+    </div>
+  </div>

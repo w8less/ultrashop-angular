@@ -1,0 +1,262 @@
+
+<div class="info-block">
+    <button class="toggle-tickets" type="button" mat-button (click)="drawer.toggle()">
+        <img src="../../assets/icons/store.png" alt="">
+        <div>ULTRASHOP</div>
+    </button>
+</div>
+  <mat-drawer-container class="example-container" autosize>
+      <mat-drawer #drawer class="example-sidenav" mode="side" opened="true">
+        <div class="filter-wrap" malihu-scrollbar [scrollbarOptions]="scrollbarOptions">
+          <div class="search-table">
+            <div class="exel-line">
+              <div class="form-wrap">
+                <input type="text" placeholder="Все строки" class="form-input">
+                <label>Все строки</label>
+              </div>
+              <div class="exel">
+                <div class="btn-exel">Exel</div>
+              </div>
+            </div>
+            <div>
+              <div class="form-wrap">
+                <input type="text" placeholder="Штрих-код" class="form-input">
+                <label>Штрих-код</label>
+              </div>
+            </div>
+            <div>
+              <div class="form-wrap icon-search">
+                <input type="text" placeholder="Поиск" class="form-input">
+                <label>Поиск</label>
+              </div>
+            </div>
+          </div>
+          <div class="filter-table">
+            <div class="title">Фильтры:</div>
+            <div class="form-select">
+                <select name="brands">
+                  <option value="">Все бренды</option>
+                  <option value="">Все бренды</option>
+                </select>
+                <label for="brands">По адресу</label>
+            </div>
+            <div class="form-wrap">
+                <input type="text" placeholder="Все размеры" class="form-input">
+                <label>Размеры</label>
+            </div>
+            <div class="form-select">
+                <select name="categ">
+                  <option value="">Все категории</option>
+                  <option value="">Все категории</option>
+                </select>
+                <label for="categ">Категории</label>
+            </div>
+            <div class="form-select">
+                <select name="male">
+                  <option value="">Любой пол</option>
+                  <option value="">Любой пол</option>
+                </select>
+                <label for="male">Пол</label>
+            </div>
+          </div>
+          <div class="export">
+              <div class="title icon">Отправка</div>
+              <div class="flex-date">
+                  <div class="form-wrap">
+                      <input type="date" placeholder="Все размеры" class="form-input">
+                  </div>
+                  <div class="form-wrap">
+                      <input type="date" placeholder="Все размеры" class="form-input">
+                  </div>
+              </div>
+          </div>
+          <div class="export">
+              <div class="title icon">Прибытие</div>
+              <div class="flex-date">
+                  <div class="form-wrap">
+                      <input type="date" placeholder="Все размеры" class="form-input">
+                  </div>
+                  <div class="form-wrap">
+                      <input type="date" placeholder="Все размеры" class="form-input">
+                  </div>
+              </div>
+          </div>
+          <div class="other-filter">
+              <div class="form-select">
+                  <select name="male">
+                    <option value="">Все цвета</option>
+                    <option value="">Все цвета</option>
+                  </select>
+                  <label for="male">Цвет</label>
+              </div>
+              <div class="form-select">
+                  <select name="male">
+                    <option value="">Все сезоны</option>
+                    <option value="">Все сезоны</option>
+                  </select>
+                  <label for="male">Сезон</label>
+              </div>
+              <div class="form-select">
+                  <select name="male">
+                    <option value="">Все фото</option>
+                    <option value="">Все фото</option>
+                  </select>
+                  <label for="male">Фото</label>
+              </div>
+              <div class="form-select">
+                  <select name="male">
+                    <option value="">Все страны</option>
+                    <option value="">Все страны</option>
+                  </select>
+                  <label for="male">Страна</label>
+              </div>
+              <div class="check-material">
+                <div class="checkbox-apple">
+                    <input type="checkbox" id="fixed-price" class="apple-switch">
+                    <label for="fixed-price">Фиксированая цена</label>     
+                </div>
+              </div>
+          </div>
+          <div class="price">
+            <div class="title">Цена</div>
+            <div class="price-flex">
+              <div class="w-48">
+                <div class="form-wrap">
+                  <input type="number" placeholder="от" class="form-input">
+                  <label>от</label>
+                </div>
+              </div>
+              <div class="w-48">
+                <div class="form-wrap">
+                  <input type="number" placeholder="до" class="form-input">
+                  <label>до</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sales price">
+            <div class="title">Цена продажи</div>
+            <div class="price-flex">
+              <div class="w-48">
+                <div class="form-wrap">
+                  <input type="number" placeholder="от" class="form-input">
+                  <label>от</label>
+                </div>
+              </div>
+              <div class="w-48">
+                <div class="form-wrap">
+                  <input type="number" placeholder="до" class="form-input">
+                  <label>до</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-drawer>
+      <div class="example-sidenav-content">
+        <div class="table-wrp">
+          <table mat-table
+          [dataSource]="dataSource" multiTemplateDataRows
+          class="table-income" >
+          <ng-container matColumnDef="name" sticky>
+            <th mat-header-cell *matHeaderCellDef> Название </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+          <ng-container matColumnDef="weight">
+            <th mat-header-cell *matHeaderCellDef> Отправка </th>
+            <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+          </ng-container>
+          <ng-container matColumnDef="symbol">
+            <th mat-header-cell *matHeaderCellDef> Прибытие </th>
+            <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+          </ng-container>
+          <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef> Размеры/Количевство </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+          </ng-container>
+          <ng-container matColumnDef="1">
+            <th mat-header-cell *matHeaderCellDef> Код товара </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+          </ng-container>
+          <ng-container matColumnDef="2">
+            <th mat-header-cell *matHeaderCellDef> Штрих-код </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+          </ng-container>
+          <ng-container matColumnDef="3">
+            <th mat-header-cell *matHeaderCellDef> Бренд </th>
+            <td mat-cell *matCellDef="let element">{{element.position}} </td>
+          </ng-container>
+          <ng-container matColumnDef="4">
+            <th mat-header-cell *matHeaderCellDef> Категория </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+          </ng-container>
+          <ng-container matColumnDef="5">
+            <th mat-header-cell *matHeaderCellDef> Цвет </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+          </ng-container>
+          <ng-container matColumnDef="6">
+            <th mat-header-cell *matHeaderCellDef> Колекция </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+          </ng-container>
+          <ng-container matColumnDef="7">
+            <th mat-header-cell *matHeaderCellDef> Пол </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+          </ng-container>
+          <ng-container matColumnDef="8">
+            <th mat-header-cell *matHeaderCellDef> ID товара </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+          </ng-container>
+          <ng-container matColumnDef="9">
+            <th mat-header-cell *matHeaderCellDef> Фото/Статус </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+          </ng-container>
+          <ng-container matColumnDef="10">
+            <th mat-header-cell *matHeaderCellDef> Страна </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+          </ng-container>
+          <ng-container matColumnDef="11">
+            <th mat-header-cell *matHeaderCellDef> Фикс.цена </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+          </ng-container>
+          <ng-container matColumnDef="12">
+            <th mat-header-cell *matHeaderCellDef> Цена грн. </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+          </ng-container>
+          <ng-container matColumnDef="13">
+            <th mat-header-cell *matHeaderCellDef> Цена продажи грн. </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+          </ng-container>
+          
+            <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+            <ng-container matColumnDef="expandedDetail">
+              <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+                <div class="example-element-detail"
+                     [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                  <div class="example-element-diagram">
+                    <div class="example-element-position"> {{element.position}} </div>
+                    <div class="example-element-symbol"> {{element.symbol}} </div>
+                    <div class="example-element-name"> {{element.name}} </div>
+                    <div class="example-element-weight"> {{element.weight}} </div>
+                  </div>
+                  <div class="example-element-description">
+                    {{element.description}}
+                    <span class="example-element-description-attribution"> -- Wikipedia </span>
+                  </div>
+                </div>
+              </td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+            <tr mat-row *matRowDef="let element; columns: columnsToDisplay;"
+                class="example-element-row"
+                [class.example-expanded-row]="expandedElement === element"
+                (click)="expandedElement = expandedElement === element ? null : element">
+            </tr>
+            <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+          </table>
+        </div>
+          <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons (page)="getNext($event)"></mat-paginator>
+          <!-- <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons (page)="getNext($event)" [length]="groups?.count"></mat-paginator> -->
+      </div>
+
+    </mat-drawer-container>

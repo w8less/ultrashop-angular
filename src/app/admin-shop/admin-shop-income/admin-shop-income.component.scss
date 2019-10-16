@@ -1,0 +1,219 @@
+// .mat-drawer-container{
+//     position: relative;
+//     top: 65px;
+//     height: calc(100vh - 122px);
+// }
+// .mat-drawer-content {
+//     height: inherit !important;
+// }
+// .example-sidenav{
+//     width: 250px;
+// }
+// .tab_links{
+//     display: flex;
+//     margin-left: 100px;
+// }
+// .info-block {
+//     display: flex;
+//     align-items: center;
+//     position: absolute;
+//     z-index: 9;
+//     top: 75px;
+
+//     button {
+//         display: flex;
+//         align-items: center;
+//         background: transparent;
+//         border: none;
+//         cursor: pointer;
+//     }
+//     img {
+//         margin: 0 7px; 
+//         width: 32px;
+//         height: 32px;
+//     }
+//     div {
+//         font-weight: 500;
+//         font-size: 15px;
+//     }
+// }
+
+
+// //table
+// .table-wrp {
+//   width: 100%;
+//   overflow-x: auto;
+// }
+// .table-income {
+//     width: 100%;
+//   }
+// .mat-table-sticky{
+//     border-right: 1px solid rgba(0,0,0,.12);
+// }
+// table {
+//     width: 100%;
+//   }
+  
+//   tr.example-detail-row {
+//     height: 0;
+//   }
+  
+//   tr.example-element-row:not(.example-expanded-row):hover {
+//     background: #777;
+//   }
+  
+//   tr.example-element-row:not(.example-expanded-row):active {
+//     background: #efefef;
+//   }
+  
+//   .example-element-row td {
+//     border-bottom-width: 0;
+//   }
+  
+//   .example-element-detail {
+//     overflow: hidden;
+//     display: flex;
+//   }
+  
+//   .example-element-diagram {
+//     min-width: 80px;
+//     border: 2px solid black;
+//     padding: 8px;
+//     font-weight: lighter;
+//     margin: 8px 0;
+//     height: 104px;
+//   }
+  
+//   .example-element-symbol {
+//     font-weight: bold;
+//     font-size: 40px;
+//     line-height: normal;
+//   }
+  
+//   .example-element-description {
+//     padding: 16px;
+//   }
+  
+//   .example-element-description-attribution {
+//     opacity: 0.5;
+//   }
+
+//   td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
+//       min-width: 200px;
+//   }
+
+
+//   // filter
+//   .form-wrap .form-input,
+//   .form-select select {
+//     width: 100%;
+//     padding: 5px 0;
+//   }
+//   .form-select{
+//     padding: 5px 0;
+//     width: 100%;
+//   }
+//   .form-select select {
+//     margin: 0;
+//   }
+//   .filter-wrap{
+//     padding: 7px;
+//     font-weight: 500;
+//     height: calc(100vh - 136px);
+
+//     .form-select::after {
+//       border: 6px solid transparent;
+//       border-top-color: #4f4d59;
+//       border-bottom: 0;
+//     }
+//     .title.icon{
+//       padding: 8px 18px;
+//       position: relative;
+  
+//       &::after {
+//         content: "";
+//         position: absolute;
+//         height: 16px;
+//         width: 16px;
+//         left: 0;
+//         top: 8px;
+//         background: url('../../../assets/icons/timetable.svg') no-repeat center / cover;
+//       }
+//     }
+//   }
+//   .exel-line { 
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between
+//   }
+//   .icon-search .form-input{
+//     padding-left: 27px; 
+//   }
+
+//   .flex-date {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+
+    
+//     .form-wrap {
+//       width: 49%;
+      
+     
+//     }
+
+//     .form-input {
+//       height: inherit;
+//       font-size: 14px;
+//       font-weight: 500;
+//     }
+//   }
+//   .icon-search label{
+//     left: 25px;
+//   }
+
+//   .icon-search::before { 
+//     content: "";
+//     position: absolute;
+//     background: url('../../../assets/icons/search.svg') no-repeat center / cover;
+//     left: 3px;
+//     top: 18px;
+//     height: 16px;
+//     width: 16px;
+//   }
+
+//   .price{
+    
+//    .price-flex {
+//      display: flex;
+//      justify-content: space-between;
+//      align-items: center;
+
+//      .w-48{
+//       width: 48%;
+
+//        .form-input{
+//          height: inherit;
+//        }
+//      }
+//    } 
+//   }
+
+//   .btn-exel {
+//     background: #EEF3F6;
+//     margin-top: 10px;
+//     padding: 10px 5px;
+//     padding-left: 18px;
+//     position: relative;
+//     cursor: pointer;
+
+//     &::before {
+//       content: "";
+//       position: absolute;
+//       left: 2px;
+//       top: 12px;
+//       width: 14px;
+//       height: 12px;
+//       background: url('../../../assets/icons/download.svg') no-repeat center / cover;
+//     }
+//   }

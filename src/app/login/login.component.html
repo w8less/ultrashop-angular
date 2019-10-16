@@ -1,0 +1,27 @@
+
+<div class="authorization">
+  <div class="authorization-block">
+    <h2>Добро пожаловать!</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <input type="text" formControlName="email" class="form-control" placeholder="Логин" />
+            <label for="email">Логин</label>
+        </div>
+        <div class="form-group">
+            <input type="password" formControlName="password" class="form-control mb-5" placeholder="Пароль" />
+            <label for="password">Пароль</label>
+        </div>
+        <div class="form-group btn-group">
+            <button class="btn btn-green enter-admin-panel">ВХОД</button>
+        </div>
+    </form>
+  </div>
+</div>
+
+<div class="authorization__footer mob col-sm-12">
+  <a href="javascript:;">Terms of service</a>
+  <a href="javascript:;">Privacy policy</a>
+  <p class="authorization__footer-copyright">
+      © «StarSoft» 2015-2019.
+  </p>
+</div>

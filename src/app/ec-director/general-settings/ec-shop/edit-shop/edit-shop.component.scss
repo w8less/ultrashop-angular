@@ -1,0 +1,7 @@
+.display {
+    display: flex;
+    justify-content: space-between;
+    .left-block, .right-block {
+        width: 49%;
+    }
+}

@@ -1,0 +1,19 @@
+<form [formGroup]="textForm" (ngSubmit)="submitText()">
+  <div class="block-wrapper global">
+    <div class="block-wrapper">
+      <div class="block" [ngSwitch]="trans.language">
+          <div class="title" [innerText]="config.title"></div>        
+          <ng-container *ngFor="let lang of trans.languages" >
+            <ckeditor *ngSwitchCase="lang" [editor]="editor" formControlName="content_{{lang}}"></ckeditor>
+          </ng-container>
+      </div>
+    </div>
+    <div class="block-wrapper">
+      <div class="block">
+        <div class="btn-wrp">
+          <button type="submit" class="btn-publish-update">Сохранить</button>
+        </div>
+      </div>
+    </div>
+  </div> 
+</form>

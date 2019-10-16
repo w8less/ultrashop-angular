@@ -1,0 +1,8 @@
+http://ultrashop.space {
+    root /home/ubuntu/ultrashop_frontend/dist/ultra-shop
+    index index.html
+
+    errors {
+        404 index.html
+    }
+}

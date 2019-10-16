@@ -1,0 +1,11 @@
+<form *ngIf="groupForm" [formGroup]="groupForm" (ngSubmit)="submit()">
+  <div class="block-wrapper">
+    <div class="block">
+        <div class="title">Группа</div>
+        <div class="form-wrap">
+          <input type="text" formControlName="name" placeholder="Название Группы" class="form-input" [attr.disabled]="true">
+          <label>Имя</label>
+        </div>
+    </div>
+  </div>
+</form>

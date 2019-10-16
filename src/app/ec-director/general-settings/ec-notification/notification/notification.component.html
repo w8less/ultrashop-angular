@@ -1,0 +1,33 @@
+<div class="block-wrapper">
+  <div class="block" >
+    <div class="title">Уведомления о заказе</div>
+    <ng-container *ngFor="let order of orderConfig">
+        <div class="not_flex" >
+          <div>{{order.title}}</div>
+          <div class="not_flex">
+            <div class="not_link"><a [routerLink]="order.link">Изменить</a></div>
+            <img style="width: 25px; height: 25px;" src="../../../../../assets/icons/information.svg" alt="" 
+            mat-raised-button
+            matTooltip="Автоматически отправляется покупателю cо статусом '{{order.title}}'"
+            aria-label="Button that displays a tooltip when focused or hovered over"
+            matTooltipPosition="left">
+          </div>
+        </div>
+    </ng-container>
+  </div>
+  <div class="block" >
+    <div class="title">Уведомления об аккаунте</div>
+    <ng-container *ngFor="let account of accountConfig">
+      <div class="not_flex" >
+        <div>{{account.title}}</div>
+        <div class="not_flex">
+          <div class="not_link"><a [routerLink]="account.link">Изменить</a></div>
+          <img style="width: 25px; height: 25px;" src="../../../../../assets/icons/information.svg" alt="" 
+          mat-raised-button
+          matTooltip="Автоматически отправляется пользователю при '{{account.title}}'"
+          aria-label="Button that displays a tooltip when focused or hovered over">
+        </div>
+      </div>
+    </ng-container>
+    </div>
+  </div>

@@ -1,0 +1,42 @@
+<div class="ultra-table">
+    <div class="navigate-header">
+      <div class="btns">
+        <button routerLink="new-shop">
+          Создать
+        </button>
+      </div>
+      <div class="ng-personal-filter">
+        <mat-form-field>
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Фильтр">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="table-wrap" *ngIf="shops">
+      <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+        <ng-container matColumnDef="address">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Адресс </th>
+          <td mat-cell *matCellDef="let shop"> {{shop.street}}, {{shop.house}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="shop_name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Магазин </th>
+          <td mat-cell *matCellDef="let shop"> {{shop.name}} </td>
+        </ng-container>  
+
+        <ng-container matColumnDef="edit">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Подробнее </th>
+          <td mat-cell *matCellDef="let shop" [routerLink]="shop.id"> Подробнее </td>
+        </ng-container>
+
+        <ng-container matColumnDef="delete">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Удалить </th>
+          <td mat-cell *matCellDef="let shop"> Удалить </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[10, 20, 50]" (page)="getNext($event)" [length]="shops?.count"></mat-paginator>
+    </div>
+  </div>

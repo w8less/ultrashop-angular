@@ -1,0 +1,20 @@
+.main-wrapper {
+    min-height: calc(100vh - 65px);
+    display: flex;
+    background-color: #FAFAFA;
+    position: relative;
+    top: 65px;
+  
+    .main-block-wrap {
+      position: relative;
+      width: 100%;
+      margin-left: 340px;
+      background: #fafafa;
+      height: calc(100vh - 65px);
+      overflow-y: auto;
+    }
+  }
+
+  * {
+    font-family: 'Rubik', sans-serif;
+  }

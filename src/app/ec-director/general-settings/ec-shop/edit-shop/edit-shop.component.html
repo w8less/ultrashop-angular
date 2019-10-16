@@ -1,0 +1,66 @@
+<form [formGroup]="addressForm" (ngSubmit)="submit()">
+    <div class="block-wrapper">
+        <div class="block">
+            <p>Создать новый адрес</p>
+            <div class="display">
+              <div class="left-block">
+                <div class="form-wrap">
+                  <div>
+                    <input type="text" formControlName="country" placeholder="Страна" class="form-input">
+                    <label>Страна</label>
+                  </div>
+                </div>
+                <div class="form-wrap">
+                  <div>
+                    <input type="text" formControlName="city" placeholder="Город" class="form-input">
+                    <label>Город</label>
+                  </div>
+                </div>
+                <div class="form-wrap">
+                  <div>
+                    <input type="text" formControlName="street" placeholder="Улица" class="form-input">
+                    <label>Улица</label>
+                  </div>
+                </div>
+                <div class="form-wrap number-zip">
+                  <div>
+                    <input type="text" formControlName="house" placeholder="Номер Дома" class="form-input">
+                    <label>Номер Дома</label>
+                  </div>
+                  <div>
+                    <input type="text" formControlName="index" placeholder="Zip" class="form-input">
+                    <label>Zip</label>
+                  </div>
+                </div>
+                <div class="form-wrap">
+                  <div>
+                    <input type="text" formControlName="name" placeholder="Название Магазина" class="form-input">
+                    <label>Название Магазина</label>
+                  </div>
+                </div>
+                <div class="form-wrap">
+                  <div>
+                    <input type="text" formControlName="shopping_center_name" placeholder="Название ТЦ" class="form-input">
+                    <label>Название ТЦ</label>
+                  </div>
+                </div>
+              </div>
+              <div class="right-block">
+                <div>
+                  <input type="" class="search-user" placeholder="Поиск локации" autocorrect="off" autocapitalize="off" spellcheck="off" #searchPlaces/>
+                </div>
+                <div class="maps">
+                  <agm-map [latitude]="lat" [longitude]="lng" style="width: 300px; height: 300px;">
+                    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                  </agm-map>            
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wrap">
+            <div class="user-comment">
+              <button type="submit" class="btn-publish-update">Обновить</button>
+            </div>
+          </div>
+      </div>
+  </form>

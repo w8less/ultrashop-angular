@@ -1,0 +1,12 @@
+<div class="block-wrapper global">
+  <div class="block">
+    <div class="title">Выберите язык</div> 
+    <div class="radio-btns">
+        <label *ngFor="let lang of trans.languages"><input type="radio" [checked]="trans.language === lang" name="lang" [value]="lang" (change)="trans.changeLanguage($event)"><span [innerText]="lang.toUpperCase()"></span></label>
+    </div>
+  </div>
+
+  <div class="block-wrapper" *ngFor="let config of configs">
+    <app-elements [config]="config"></app-elements>
+  </div>
+</div>

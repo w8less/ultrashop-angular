@@ -1,0 +1,30 @@
+<div class="main-header-wrap">
+  <div class="main-header-content">
+    <div class="logo-block">
+      ULTRASHOP
+    </div>
+    <div class="menu icon-menu" (click) = "menu()">
+        <img src="../../../../assets/icons/icons8-user-80.png" alt="" class="user-menu"> 
+    </div>
+    <nav class="userNav" role='navigation' (mouseleave)="hideMenu()">
+      <div class="user_photo">
+          <div class="avatar"><img src="../../../../assets/icons/icons8-user-80.png" alt=""></div>
+          <div class="user_info">
+            <div class="user_name">name</div>
+            <div class="user_email">i@you.ua</div>
+          </div>
+      </div>
+      <ul class="sub-menu ">
+          <li>
+            <a (click)="navLi()" routerLinkActive="active" routerLink="/general-settings">Настройки</a>
+          </li>
+          <li>
+            <a (click)="logOut()">
+              Выйти
+            </a>
+          </li>
+      </ul>
+    </nav>
+    </div>
+  </div>
+  

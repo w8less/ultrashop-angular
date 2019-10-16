@@ -1,0 +1,364 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { 
+    height: 100%;
+    font-size: 13px;
+    font-family: 'Rubik', sans-serif;
+ }
+body { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*{
+    outline: none;
+}
+
+// start header tabs
+nav {
+  position: relative;
+  z-index: 2;
+  padding-top: 6px;
+  background-color: #fff;
+  height: 50px;
+  display: flex;
+  -moz-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+  
+  a {
+      font-size: 14px;
+      line-height: 23px;
+      color: #BFBFBF;
+      font-weight: 400;
+      padding: 10px 15px;
+      text-decoration: none;
+      text-align: center;
+      border-bottom: 3px solid transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      // &:first-child {
+      //     margin-left: 35px;
+      // }
+
+      &.active {
+          border-bottom: 3px solid #216684;
+          color: #216684;
+          text-decoration: none;
+          border-radius: 3px;
+      }
+  }
+}
+
+// end header tabs
+
+// start checkbox - like iphone
+
+.check-material{
+  
+    .checkbox-apple{
+      margin: 10px 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+  
+      input{
+        margin: 0;
+        margin-right: 7px;
+      }
+  
+      label{
+        justify-self: center;
+        align-self: center;
+      }
+    }
+  }
+  
+  input.apple-switch {
+    position: relative;
+    -webkit-appearance: none;
+    outline: none;
+    width: 40px;
+    height: 20px;
+    background-color: #fff;
+    border: 1px solid #D9DADC;
+    border-radius: 50px;
+    box-shadow: inset -20px 0 0 0 #fff;
+    cursor: pointer;
+  
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: 2px;
+      background: transparent;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      box-shadow: 2px 4px 6px rgba(0,0,0,0.2);
+    }
+  
+    &:checked {
+      box-shadow: inset 20px 0 0 0 #424154;
+      border-color: #424154;
+  
+      &:after {
+        left: 20px;
+        box-shadow: -2px 4px 3px rgba(0,0,0,0.05);
+      }
+    }
+  }
+
+  // end checkbox - like iphone
+
+  .pointer {
+    cursor: pointer;
+  }
+
+  .with-back {
+    display: flex;
+    align-items: center;
+    .back-link{
+      width: 36px;
+      height: 22px;
+      background: url("src/assets/icons/icons8-arrow-pointing-left-100.png") no-repeat center / cover;
+      margin-right: 10px; 
+      cursor: pointer;
+    }
+  }
+  // start select  
+
+  .form-select{
+    width: 250px;
+    height: 40px;
+    padding: 5px 10px;
+    background: #FAFAFA;
+    border: none;
+    margin-top: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    select{
+        width: 250px;
+        height: 40px;
+        background: #FAFAFA;
+        border: none;
+        margin-right: 12px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+    label{
+        position: absolute;
+        top: 3px;
+        left: 10px;
+        z-index: 1;
+        color: #BFBFBF;
+        transition: all .5s;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        right: 15px;
+        width: 0;
+        height: 0;
+        border: 8px solid transparent;
+        border-top-color: #4f4d59;
+        border-bottom: 0;
+    }
+}
+
+// end select
+
+
+// start input
+
+.form-wrap {
+    position: relative;
+    margin-top: 10px;
+
+    .form-input {
+        width: 250px;
+        height: 40px;
+        padding: 5px 10px;
+        background: #FAFAFA;
+        border: none;
+    }
+  
+    input:placeholder-shown + label {
+      opacity: 0;
+      visibility: hidden;
+    }
+  
+    label {
+        position: absolute;
+        top: 3px;
+        left: 10px;
+        z-index: 1;
+        transition: all .5s;
+        color: #BFBFBF;
+    }
+  }
+
+  // end input 
+
+
+  // start block with inputs , selects and others 
+
+  
+.block-wrapper {
+  margin: 15px;
+
+  .block {
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+
+    .title{
+        font-weight: 500;
+        padding-bottom: 7px;
+    }
+    .btn-wrp{
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+
+      .btn-publish-update {
+        padding: 10px 20px;
+        background-color: #424154;
+        color: #FFF;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+
+// end block with inputs , selects and others 
+
+
+// start navigation in components (filter , buttons ...)
+.navigate-header {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 0;
+  align-items: center;
+
+  .btns {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px;
+
+    button {
+      padding: 7px 25px;
+      background: #424154;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all .3s;
+
+      &:hover{
+        transform: translateY(-3px);
+        -webkit-box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.25);
+        -moz-box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.25);
+        box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.25);
+      }
+    }
+  }
+
+  .ng-personal-filter {
+    
+    .mat-form-field-infix{
+      width: 320px;
+    }
+  }
+}
+
+// end navigation in components
+
+
+// start material table 
+
+
+th.mat-sort-header-sorted {
+  color: #000;
+}
+
+.ultra-table {
+  padding: 10px;
+  background: #fff;
+  
+  .table-wrap {
+    height: calc(100vh - 270px);
+    overflow-y: auto;
+  }
+
+  .mat-elevation-z8 {
+    width: calc(100% - 30px);
+    margin: 15px;
+
+      .mat-header-row {
+
+          th {
+              color: #333;
+              font-weight: 500;
+              font-size: 13px;
+              letter-spacing: 0.03em;
+              border-bottom: 1.3px solid #333;
+          }
+      }
+  }
+
+  .ultra-table-pagination {
+
+  }
+}
+
+// end material table
+
+// start radio like buttons
+
+.radio-btns {
+  margin:4px;
+  float:left;
+  
+  label {
+      float:left;
+      min-width: 170px;
+      margin:4px;
+      background-color:#EFEFEF;
+      border-radius:4px;
+      border:1px solid #D0D0D0;
+      overflow:auto;
+      cursor: pointer;
+         
+      span {
+          text-align:center;
+          font-size: 15px;
+          padding: 5px 10px;
+          display:block;
+      }
+      input {
+          position:absolute;
+          top:-20px;
+
+          &:checked + span {
+              background-color:#404040;
+              color:#F7F7F7;
+          }
+      }
+  }
+}
+
+
+// end radio like buttons
+
+
+.ck-editor__editable_inline {
+  min-height: 200px;
+}

@@ -1,0 +1,74 @@
+<!-- <div id="side-bar-wrap" [ngClass]="{'hidden': sideNavService.hideSideNav}"> -->
+    <div id="side-bar-wrap">
+        <div class="side-bar-content">
+      
+          <div class="side-bar-header" (click) = "clickEvent()">
+            <div class="rest-info">
+              <img src="../../../../assets/icons/store.png" alt="" class="restaurant-img">
+              <div class="rest-info-text">
+                <div class="rest-title">Магазин</div>
+                <div class="rest-name">ULTRASHOP</div>
+              </div>
+            </div>
+      
+            <!-- <div class="dropdown">
+              <div class="arrow-down" [ngClass]="{'arrow-top' : this.toggle}"></div>
+              <div class="dropdown-content" [ngClass]="{'show' : this.toggle}">
+                <div *ngFor="let project of projects">
+                  <a href="javascript:;" (click)="selectProject(project.id)">{{project.name}}</a>
+                </div>
+              </div>
+            </div> -->
+          </div>
+      
+          <div class="section">
+            <div class="menu-items tabs">
+      
+              <div class="menu-item-wrap current" [routerLink]="[ 'general-settings/ec-info/info']">
+                <div class="menu-item">
+                  <img src="../../../../assets/icons/Menu1active.svg" alt="icon" class="item-icon">
+                  <div routerLinkActive="active">Настройки</div>
+                </div>
+              </div>
+      
+              <div class="menu-item-wrap" [routerLink]="[ 'dashboard']">
+                <div class="menu-item">
+                  <img src="../../../../assets/icons/Menu2active.svg" alt="icon" class="item-icon">
+                  <div>Dashboard</div>
+                </div>
+              </div>
+
+              <div class="side-bar-footer">
+                <div>
+                  © StarSoft <br> 2015-{{today | date: 'yyyy'}}.
+                </div>
+              </div>
+      
+            </div>
+      
+            <div class="sec-side-bar-wrap">
+              <div class="sec-sb-menu-items box visible">
+                <div class="sec-sb-header">
+                  <div class="header-title">Настройки</div>
+                </div>
+                <a [routerLink]="[ 'general-settings/ec-info/info']" routerLinkActive="active">Информация</a>
+                <a [routerLink]="[ 'general-settings/users/all-users']" routerLinkActive="active">Пользователи</a>
+                <a [routerLink]="[ 'general-settings/ec-notification/notification']" routerLinkActive="active">Оповещения</a>
+                <a [routerLink]="[ 'general-settings/ec-shop/shops']" routerLinkActive="active">Магазины</a>
+              </div>
+              <div class="sec-sb-menu-items box">
+                <div class="sec-sb-header">
+                  <div class="header-title">Dashboard</div>
+                </div>
+                <!-- <a [routerLink]="['ticket-system/events/all-events']" routerLinkActive="active">События</a>
+                <a [routerLink]="['ticket-system/tickets/ticket-products']" routerLinkActive="active">Продукты</a> -->
+              </div>
+
+            </div>
+          </div>
+      
+      
+        </div>
+      </div>
+      
+      

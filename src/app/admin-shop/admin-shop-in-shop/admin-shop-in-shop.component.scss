@@ -1,0 +1,36 @@
+.mat-drawer-container{
+    position: relative;
+    top: 65px;
+    height: calc(100vh - 122px);
+}
+.example-sidenav{
+    width: 250px;
+}
+.tab_links{
+    display: flex;
+    margin-left: 100px;
+}
+.info-block {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    z-index: 9;
+    top: 75px;
+
+    button {
+        display: flex;
+        align-items: center;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+    img {
+        margin: 0 7px; 
+        width: 32px;
+        height: 32px;
+    }
+    div {
+        font-weight: 500;
+        font-size: 15px;
+    }
+}

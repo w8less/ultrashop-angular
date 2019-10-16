@@ -1,0 +1,35 @@
+<form [formGroup]="socialForm" (ngSubmit)="submit()">
+  <div class="block-wrapper">
+
+    <div class="block">
+        <div class="title">Название соц.сети</div>
+        <div class="title with-back"><div class="back-link" (click)="general.locationBack()"></div>Добавить соц.сеть</div>       
+        <div class="form-wrap">
+          <input type="text" formControlName="title" placeholder="Название" class="form-input">
+          <label>Название</label>
+        </div>
+    </div>
+
+    <div class="block">
+        <div class="title">Ссылка</div>        
+        <div class="form-wrap">
+          <input type="text"  formControlName="link" placeholder="Ссылка" class="form-input">
+          <label>Ссылка</label>
+        </div>
+    </div>
+
+    <div class="block">
+        <div class="title">Выберите Изображение</div>        
+        <div class="form-wrap">
+            <input type="file" formControlName="image">
+        </div>
+    </div>
+
+    <div class="block">
+      <div class="btn-wrp">
+        <button type="submit" class="btn-publish-update">Создать</button>
+      </div>
+    </div>
+
+  </div> 
+</form>
